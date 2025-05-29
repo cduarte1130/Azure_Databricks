@@ -1,0 +1,36 @@
+{
+	"name": "plp-transform-silver",
+	"properties": {
+		"activities": [
+			{
+				"name": "nb_transform_data",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/ConsumosEngerticos/transform_data"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_Databricks",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"fileName": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Pip_Ingesta_ConsumoEnegertico"
+		},
+		"annotations": []
+	}
+}
