@@ -5,6 +5,9 @@
 			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "ConsumoEnergetico"
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
