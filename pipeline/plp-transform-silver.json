@@ -13,7 +13,6 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
 				"typeProperties": {
 					"notebookPath": "/ConsumosEngerticos/transform_data",
 					"baseParameters": {
