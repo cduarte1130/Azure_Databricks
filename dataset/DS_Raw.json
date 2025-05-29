@@ -1,0 +1,51 @@
+{
+	"name": "DS_Raw",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "ConsumoEnergetico"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "consumos_energeticos.csv",
+				"fileSystem": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "id_cliente",
+				"type": "String"
+			},
+			{
+				"name": "fecha_consumo",
+				"type": "String"
+			},
+			{
+				"name": "consumo_kwh",
+				"type": "String"
+			},
+			{
+				"name": "tipo_servicio",
+				"type": "String"
+			},
+			{
+				"name": "region",
+				"type": "String"
+			},
+			{
+				"name": "estado_medidor",
+				"type": "String"
+			}
+		]
+	}
+}
