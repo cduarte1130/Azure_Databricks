@@ -5,6 +5,11 @@
 			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"fileName": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "ConsumoEnergetico"
 		},
