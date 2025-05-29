@@ -15,7 +15,11 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/ConsumosEngerticos/transform_data"
+					"notebookPath": "/ConsumosEngerticos/transform_data",
+					"baseParameters": {
+						"rawPath": "@concat('abfss://raw@adlsdatabrickscmd01.dfs.core.windows.net/ingest/', pipeline().parameters.fileName)",
+						"silverPath": "@concat('abfss://silver@adlsdatabrickscmd01.dfs.core.windows.net/', replace(pipeline().parameters.fileName, '.csv','_transformed.parquet'))"
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "LS_Databricks",
