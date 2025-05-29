@@ -28,8 +28,8 @@
 					},
 					"newCluster": {
 						"sparkVersion": "10.4.x-LTS (Scala 2.12)",
-						"nodeType": "Standard_DS3_v2",
-						"numWorkers": 1,
+						"nodeType": "Standard_DS1_v2",
+						"numWorkers": 0,
 						"sparkConf": {
 							"spark.hadoop.fs.azure.account.key.adlsdatabrickscmd01.dfs.core.windows.net": "tO25mDhGaG8y2cvavLme0Bf3j1wBDaPF9Svhu7wWjVsBk2WQF0LTeDp2TNbx7zVWwUME2x6E009H+AStw51SDQ=="
 						}
