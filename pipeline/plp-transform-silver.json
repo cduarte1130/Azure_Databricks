@@ -15,7 +15,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/ConsumosEngerticos/transform_data",
+					"notebookPath": "/ConsumosEnergeticos/transform_data",
 					"baseParameters": {
 						"rawPath": {
 							"value": "@concat('abfss://raw@adlsdatabrickscmd01.dfs.core.windows.net/ingest/', pipeline().parameters.fileName)",
