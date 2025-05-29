@@ -13,6 +13,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "@dataset().fileName",
+				"folderPath": "ingest",
 				"fileSystem": "raw"
 			},
 			"columnDelimiter": ",",
