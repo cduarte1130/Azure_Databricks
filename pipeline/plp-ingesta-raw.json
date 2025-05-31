@@ -70,7 +70,8 @@
 		],
 		"parameters": {
 			"fileName": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "consumos_energeticos.csv"
 			}
 		},
 		"folder": {
