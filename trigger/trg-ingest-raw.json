@@ -1,0 +1,27 @@
+{
+	"name": "trg-ingest-raw",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "plp-ingesta-raw",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"fileName": "@triggerBody().fileName"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/raw/blobs/.csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/869b3c26-a405-403a-89e0-67b6749cef0a/resourceGroups/RG-CMD-DATABRICKS/providers/Microsoft.Storage/storageAccounts/adlsdatabrickscmd01",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
