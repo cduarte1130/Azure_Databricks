@@ -1,0 +1,54 @@
+{
+	"name": "plp-transform-silver",
+	"properties": {
+		"activities": [
+			{
+				"name": "nb_transform_data",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/ConsumosEnergeticos/transform_data",
+					"baseParameters": {
+						"rawPath": {
+							"value": "@concat('abfss://raw@adlsdatabrickscmd01.dfs.core.windows.net/ingest/', pipeline().parameters.fileName)",
+							"type": "Expression"
+						},
+						"silverPath": {
+							"value": "@concat('abfss://silver@adlsdatabrickscmd01.dfs.core.windows.net/', replace(pipeline().parameters.fileName, '.csv','_transformed.parquet'))",
+							"type": "Expression"
+						}
+					},
+					"newCluster": {
+						"sparkVersion": "10.4.x-LTS (Scala 2.12)",
+						"nodeType": "Standard_DS1_v2",
+						"numWorkers": 0,
+						"sparkConf": {
+							"spark.hadoop.fs.azure.account.key.adlsdatabrickscmd01.dfs.core.windows.net": "tO25mDhGaG8y2cvavLme0Bf3j1wBDaPF9Svhu7wWjVsBk2WQF0LTeDp2TNbx7zVWwUME2x6E009H+AStw51SDQ=="
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_Databricks",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"fileName": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Pip_Ingesta_ConsumoEnegertico"
+		},
+		"annotations": []
+	}
+}
